@@ -10,7 +10,19 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-
+            NavigationView {
+                VStack {
+                    NavigationLink(destination: ChatView()) {
+                        Text("Chat")
+                            .frame(minWidth: 0, maxWidth: 100)
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
+            }
         }
     }
 }
