@@ -9,18 +9,36 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            NavigationView {
-                VStack {
-                    NavigationLink(destination: ChatView()) {
-                        Text("Chat")
-                            .frame(minWidth: 0, maxWidth: 100)
-                            .padding()
-                            .foregroundColor(.white)
-                            .background(Color("MainColor"))
-                            .cornerRadius(10)
+        NavigationView{
+            ZStack{
+                Color("MainColor")
+                    .edgesIgnoringSafeArea(.all)
+                ScrollView(.vertical, showsIndicators: false){
+                        Image("Menu")
+                            .resizable()
+                            .frame(width: 150, height: 150)
+                            .padding(.top,20)
+                        Text("Learn It")
+                            .bold()
+                            .font(.largeTitle)
+                    VStack(alignment: .leading){
+                        ForEach(0..<5){_ in
+                                Text("Biologia")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .padding(.horizontal, 5)
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack() {
+                                    ForEach(0..<6) {_ in
+                                        Rectangle()
+                                            .frame(width: 150, height: 170)
+                                            .cornerRadius(20)
+                                            .padding(.horizontal, 5)
+                                    }
+                                }
+                            }
+                        }
                     }
-                    .buttonStyle(PlainButtonStyle())
                 }
             }
         }

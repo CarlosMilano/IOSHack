@@ -13,6 +13,7 @@
 		7C56486F29EBAA200017F246 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C56486E29EBAA200017F246 /* ContentView.swift */; };
 		7C56487129EBAA230017F246 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C56487029EBAA230017F246 /* Assets.xcassets */; };
 		7C56487429EBAA230017F246 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C56487329EBAA230017F246 /* Preview Assets.xcassets */; };
+		7CA600A229EC07FB00FB7651 /* GradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA600A129EC07FB00FB7651 /* GradeView.swift */; };
 		7CCB8A6229EBC12F0074D6CE /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCB8A6129EBC12F0074D6CE /* SplashView.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		7C56486E29EBAA200017F246 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7C56487029EBAA230017F246 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C56487329EBAA230017F246 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7CA600A129EC07FB00FB7651 /* GradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeView.swift; sourceTree = "<group>"; };
 		7CCB8A6129EBC12F0074D6CE /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,6 +59,7 @@
 		7C56486B29EBAA200017F246 /* IOSHack */ = {
 			isa = PBXGroup;
 			children = (
+				7CA600A129EC07FB00FB7651 /* GradeView.swift */,
 				7CCB8A6129EBC12F0074D6CE /* SplashView.swift */,
 				167E255A29EBC00100CA44CD /* ChatView.swift */,
 				7C56486C29EBAA200017F246 /* IOSHackApp.swift */,
@@ -153,6 +156,7 @@
 			files = (
 				167E255B29EBC00100CA44CD /* ChatView.swift in Sources */,
 				7CCB8A6229EBC12F0074D6CE /* SplashView.swift in Sources */,
+				7CA600A229EC07FB00FB7651 /* GradeView.swift in Sources */,
 				7C56486F29EBAA200017F246 /* ContentView.swift in Sources */,
 				7C56486D29EBAA200017F246 /* IOSHackApp.swift in Sources */,
 			);

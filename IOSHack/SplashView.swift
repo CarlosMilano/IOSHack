@@ -19,13 +19,13 @@ struct SplashView: View {
             else {
                 Color("MainColor")
                     .edgesIgnoringSafeArea(.all)
-                Image("LearnIt")
+                Image("Menu1")
                     .scaledToFit()
                     
             }
         }
         .onAppear{
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2){
                 withAnimation{
                     self.isAvtive = true
                 }
