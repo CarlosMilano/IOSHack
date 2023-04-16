@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct StartCourseView: View {
+    
+    let content : ContentModel
+    
     var body: some View {
         ZStack(){
             Color("MainColor")

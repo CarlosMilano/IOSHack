@@ -42,7 +42,7 @@ struct ContentView: View {
                                 HStack() {
                                     ForEach(contentVM.arrContent)
                                         { item in
-                                            NavigationLink(destination: StartCourseView(),
+                                            NavigationLink(destination: StartCourseView(content: item),
                                             label: { ContentItemView(content: item)})
                                             
                                         }
