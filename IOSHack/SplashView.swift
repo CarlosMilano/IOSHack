@@ -17,10 +17,11 @@ struct SplashView: View {
                 ContentView()
             }
             else {
-                Rectangle()
-                    .background(Color("MainColor"))
-                Image("")
+                Color("MainColor")
+                    .edgesIgnoringSafeArea(.all)
+                Image("LearnIt")
                     .scaledToFit()
+                    
             }
         }
         .onAppear{
