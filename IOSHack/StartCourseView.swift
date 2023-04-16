@@ -15,7 +15,7 @@ struct StartCourseView: View {
         ZStack(){
             Color("MainColor")
                 .edgesIgnoringSafeArea(.all)
-            VStack(alignment: .leading){
+            VStack(alignment: .center){
                 VStack{
                     Text("Este es el texto de dialogo del Elefante")
                         .padding()
@@ -23,17 +23,22 @@ struct StartCourseView: View {
                         .cornerRadius(10)
                 }
                 Spacer()
-                
+                Image("Menu")
+                    .resizable()
+                    .frame(width: 162, height: 120)
+                Spacer()
                 Button(action: {
                             print("¡Hola, mundo!")
                         }) {
-                            Text("Pulsa aquí")
-                                .padding()
+                            Text("Empezar")
+                                .font(.system(size: 20, weight: .bold ))
+                                .padding(.horizontal,50)
+                                .padding(.vertical)
                                 .foregroundColor(.black)
                                 .background(Color("Yellow"))
                                 .cornerRadius(10)
                         }
-                        .frame(width: 200, height: 50)
+                    .frame(width: 200, height: 50)
             }
         }
     }
