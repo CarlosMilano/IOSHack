@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		167E255B29EBC00100CA44CD /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167E255A29EBC00100CA44CD /* ChatView.swift */; };
+		167E257B29EBD75900CA44CD /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 167E257A29EBD75900CA44CD /* OpenAISwift */; };
 		7C56486D29EBAA200017F246 /* IOSHackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C56486C29EBAA200017F246 /* IOSHackApp.swift */; };
 		7C56486F29EBAA200017F246 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C56486E29EBAA200017F246 /* ContentView.swift */; };
 		7C56487129EBAA230017F246 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C56487029EBAA230017F246 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				167E257B29EBD75900CA44CD /* OpenAISwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +91,9 @@
 			dependencies = (
 			);
 			name = IOSHack;
+			packageProductDependencies = (
+				167E257A29EBD75900CA44CD /* OpenAISwift */,
+			);
 			productName = IOSHack;
 			productReference = 7C56486929EBAA200017F246 /* IOSHack.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +122,9 @@
 				Base,
 			);
 			mainGroup = 7C56486029EBAA200017F246;
+			packageReferences = (
+				167E257929EBD75900CA44CD /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+			);
 			productRefGroup = 7C56486A29EBAA200017F246 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -276,7 +284,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"IOSHack/Preview Content\"";
-				DEVELOPMENT_TEAM = Q29LRF9C66;
+				DEVELOPMENT_TEAM = PS39S65WUX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = AI;
@@ -291,7 +299,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cm.IOSHack;
+				PRODUCT_BUNDLE_IDENTIFIER = cm.IOSHack1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -308,7 +316,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"IOSHack/Preview Content\"";
-				DEVELOPMENT_TEAM = Q29LRF9C66;
+				DEVELOPMENT_TEAM = PS39S65WUX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = AI;
@@ -323,7 +331,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cm.IOSHack;
+				PRODUCT_BUNDLE_IDENTIFIER = cm.IOSHack1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -353,6 +361,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		167E257929EBD75900CA44CD /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamrushy/OpenAISwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		167E257A29EBD75900CA44CD /* OpenAISwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 167E257929EBD75900CA44CD /* XCRemoteSwiftPackageReference "OpenAISwift" */;
+			productName = OpenAISwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7C56486129EBAA200017F246 /* Project object */;
 }

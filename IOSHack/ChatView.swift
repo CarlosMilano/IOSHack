@@ -6,10 +6,66 @@
 //
 
 import SwiftUI
+import OpenAISwift
+
+final class ViewModel: ObservableObject{
+    init(){}
+    
+    private var client: OpenAISwift?
+    
+    func setup(){
+        client = OpenAISwift(authToken: "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")
+    }
+    
+    func send( text: String, completion: @escaping (String) -> Void ){
+        client?.sendCompletion(with: text, maxTokens: 500, completionHandler: { result in switch result {
+        case .success(let model):
+            let output = model.choices?[0].text ?? ""
+            completion(output)
+        case .failure:
+            completion("hubo un error")
+            break
+        } })
+    }
+}
 
 struct ChatView: View {
+    
+    @ObservedObject var viewModel = ViewModel()
+    @State var text = ""
+    @State var models = [String]()
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading){
+            ForEach(models, id: \.self){ string in
+                Text(string)
+            }
+            Spacer()
+            
+            HStack{
+                TextField("Escribe aqui...", text: $text )
+                Button("Send"){
+                    send()
+                }
+            }
+        }
+        .onAppear{
+            viewModel.setup()
+        }
+        .padding()
+    }
+    func send(){
+        guard !text.trimmingCharacters(in: .whitespaces).isEmpty else{
+            return
+        }
+        models.append( "Me: \(text)")
+        viewModel.send(text: text) {
+            response in DispatchQueue.main.async {
+                self.models.append("Maestro Elefante: "+response)
+                self.text = ""
+            }
+        }
     }
 }
 
