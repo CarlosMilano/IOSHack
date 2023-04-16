@@ -29,18 +29,45 @@ final class ViewModel: ObservableObject{
     }
 }
 
+
 struct ChatView: View {
     
     @ObservedObject var viewModel = ViewModel()
+    @State var isTyping = false
     @State var text = ""
-    @State var models = [String]()
+    @State private var renderedText = ""
+    @State private var fullText = ""
+    @State var timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
     
     var body: some View {
         VStack(alignment: .leading){
-            ForEach(models, id: \.self){ string in
-                Text(string)
+            
+            ScrollView(.vertical,showsIndicators: false){
+                VStack{
+                    Text(renderedText)
+                        .font(.system(size: 20, weight: .bold ))
+                                .padding()
+                                .background(
+                                    Rectangle()
+                                        .foregroundColor(Color.white)
+                                        .cornerRadius(10)
+                                )
+                                .cornerRadius(10)
+                                .onReceive(timer) { _ in
+                                    if isTyping {
+                                        if  renderedText.count < fullText.count {
+                                            renderedText = String(fullText.prefix(renderedText.count + 1))
+                                        } else {
+                                            timer.upstream.connect().cancel()
+                                            isTyping = false
+                                        }
+                                        
+                                    }
+                                }
+                }
             }
+            
             Spacer()
             
             HStack{
@@ -71,10 +98,15 @@ struct ChatView: View {
         guard !text.trimmingCharacters(in: .whitespaces).isEmpty else{
             return
         }
-        models.append( "Me: \(text)")
+        fullText = ""
+        renderedText = ""
+        timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
         viewModel.send(text: text) {
             response in DispatchQueue.main.async {
-                self.models.append("Maestro Elefante: "+response)
+                fullText = response
+                fullText = fullText.trimmingCharacters(in: .whitespacesAndNewlines)
+                print("Respuesta: ", fullText)
+                isTyping = true
                 self.text = ""
             }
         }
