@@ -16,6 +16,6 @@ struct ContentModel : Identifiable {
 
 extension ContentModel {
     
-    public static var defaultContent = ContentModel(titulo: "Chichen Itza", descripcion: "El Templo Kukulcán es la construcción más conocida de Chichen Itzá, el sitio arqueológico maya que se encuentra en el norte de la península de Yucatán.", nombreImagen: "Menu")
+    public static var defaultContent = ContentModel(titulo: "Chichen Itza", descripcion: "El Templo Kukulcán es la construcción más conocida de Chichen Itzá, el sitio arqueológico maya que se encuentra en el norte de la península de Yucatán.", nombreImagen: "Tema1")
     
 }

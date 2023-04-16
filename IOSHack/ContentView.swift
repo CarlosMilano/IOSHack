@@ -26,18 +26,17 @@ struct ContentView: View {
                             ForEach(0..<6) {_ in
                                 Rectangle()
                                     .frame(width: 150, height: 40)
-                                    .cornerRadius(20)
+                                    .cornerRadius(5)
                                     .padding(.horizontal, 5)
                             }
                         }
                     }
                     VStack(alignment: .leading){
-                        ForEach(0..<5){_ in
-                                Text("Biologia")
-                                    .foregroundColor(Color("Yellow"))
+                                Text("Ciencias Naturales")
+                            .foregroundColor(Color.white)
                                     .font(.largeTitle)
                                     .bold()
-                                    .padding(.horizontal, 7)
+                                    .padding(.horizontal, 30)
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack() {
                                     ForEach(contentVM.arrContent)
@@ -49,7 +48,6 @@ struct ContentView: View {
                                     }
                                 
                             }
-                        }
                     }
                 }
             }

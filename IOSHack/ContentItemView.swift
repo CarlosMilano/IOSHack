@@ -14,10 +14,9 @@ struct ContentItemView: View {
     var body: some View {
         Image(content.nombreImagen)
             .resizable()
-            .scaledToFit()
-            .cornerRadius(30)
-            .frame(width: 150, height: 170)
-            .padding()
+            .cornerRadius(5)
+            .frame(width: 170, height: 190)
+            .padding(.horizontal,5)
     }
 }
 
