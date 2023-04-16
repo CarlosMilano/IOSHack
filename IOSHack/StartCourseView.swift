@@ -42,6 +42,6 @@ struct StartCourseView: View {
 
 struct StartCourseView_Previews: PreviewProvider {
     static var previews: some View {
-        StartCourseView()
+        StartCourseView(content: ContentModel.defaultContent)
     }
 }
