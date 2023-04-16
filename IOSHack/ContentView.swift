@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  IOSHack
 //
-//  Created by Carlos Milano on 15/04/23.
+//  Created by Carlos Milano and Jorge Becerril Gi on 15/04/23.
 //
 
 import SwiftUI
@@ -15,6 +15,7 @@ struct ContentView: View {
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
             Text("Carlossss")
+            Text("Bruh")
         }
         .padding()
     }
