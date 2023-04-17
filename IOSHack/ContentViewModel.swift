@@ -26,16 +26,16 @@ class ContentViewModel : ObservableObject {
         var content : ContentModel
         
         
-        content = ContentModel(titulo: "Chichen Itza", descripcion: "Texto por agregar.", nombreImagen: "Tema1")
+        content = ContentModel(titulo: "Chichen Itza", descripcion: "Texto por agregar.", nombreImagen: "course_c1")
         arrContent.append(content)
         
-        content = ContentModel(titulo: "Chichen Itza", descripcion: "Texto por agregar.", nombreImagen: "Tema2")
+        content = ContentModel(titulo: "Chichen Itza", descripcion: "Texto por agregar.", nombreImagen: "course_c2")
         arrContent.append(content)
         
-        content = ContentModel(titulo: "Chichen Itza", descripcion: "Texto por agregar.", nombreImagen: "Tema3")
+        content = ContentModel(titulo: "Chichen Itza", descripcion: "Texto por agregar.", nombreImagen: "course_c3")
         arrContent.append(content)
         
-        content = ContentModel(titulo: "Chichen Itza", descripcion: "Texto por agregar.", nombreImagen: "Tema4")
+        content = ContentModel(titulo: "Chichen Itza", descripcion: "Texto por agregar.", nombreImagen: "course_c4")
         arrContent.append(content)
 
         
@@ -46,16 +46,16 @@ class ContentViewModel : ObservableObject {
         var contentM : ContentModel
         
         
-        contentM = ContentModel(titulo: "Chichen Itza", descripcion: "Texto por agregar.", nombreImagen: "Menu1")
+        contentM = ContentModel(titulo: "Chichen Itza", descripcion: "Texto por agregar.", nombreImagen: "course_m1")
         arrContentM.append(contentM)
         
-        contentM = ContentModel(titulo: "Chichen Itza", descripcion: "Texto por agregar.", nombreImagen: "Tema2")
+        contentM = ContentModel(titulo: "Chichen Itza", descripcion: "Texto por agregar.", nombreImagen: "course_m2")
         arrContentM.append(contentM)
         
-        contentM = ContentModel(titulo: "Chichen Itza", descripcion: "Texto por agregar.", nombreImagen: "Tema3")
+        contentM = ContentModel(titulo: "Chichen Itza", descripcion: "Texto por agregar.", nombreImagen: "course_m3")
         arrContentM.append(contentM)
         
-        contentM = ContentModel(titulo: "Chichen Itza", descripcion: "Texto por agregar.", nombreImagen: "Tema4")
+        contentM = ContentModel(titulo: "Chichen Itza", descripcion: "Texto por agregar.", nombreImagen: "course_m4")
         arrContentM.append(contentM)
     }
     
