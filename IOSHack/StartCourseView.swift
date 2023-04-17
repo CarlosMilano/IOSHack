@@ -10,6 +10,9 @@ import SwiftUI
 struct StartCourseView: View {
     
     let content : ContentModel
+    let contentM : ContentModel
+    let contentO : ContentModel
+
     
     var body: some View {
         ZStack(){
@@ -21,6 +24,11 @@ struct StartCourseView: View {
                         .padding()
                         .background(Color.white)
                         .cornerRadius(10)
+                    Image(content.nombreImagen)
+                        .resizable()
+                        .cornerRadius(5)
+                        .frame(width: 170, height: 190)
+                        
                 }
                 Spacer()
                 Image("Menu")
@@ -47,6 +55,6 @@ struct StartCourseView: View {
 
 struct StartCourseView_Previews: PreviewProvider {
     static var previews: some View {
-        StartCourseView(content: ContentModel.defaultContent)
+        StartCourseView(content: ContentModel.defaultContent, contentM: ContentModel.defaultContent,contentO: ContentModel.defaultContent)
     }
 }

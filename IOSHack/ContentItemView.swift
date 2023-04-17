@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentItemView: View {
     let content : ContentModel
+    let contentM : ContentModel
+    let contentO : ContentModel
 
     
     var body: some View {
@@ -16,12 +18,12 @@ struct ContentItemView: View {
             .resizable()
             .cornerRadius(5)
             .frame(width: 170, height: 190)
-            .padding(.horizontal,5)
+            .padding(.horizontal, 5)
     }
 }
 
 struct ContentItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentItemView(content: ContentModel.defaultContent)
+        ContentItemView(content: ContentModel.defaultContent, contentM: ContentModel.defaultContent,contentO: .defaultContent)
     }
 }
