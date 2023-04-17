@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GradeSectionView: View {
+    @Binding var gradeSelected: Bool
     @State var imageNameEnding: String = "_open"
     @State var timerCount: Float = 3.0
     let page : GradeData
@@ -46,6 +47,7 @@ struct GradeSectionView: View {
                             }
                         }
                     Button(action: {
+                        gradeSelected = true
                         })
                     {
                         Text("¡Vamos!")

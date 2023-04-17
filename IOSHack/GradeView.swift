@@ -11,6 +11,8 @@ import ConcentricOnboarding
 struct GradeView: View {
     
     @State private var currentIndex: Int = 0
+    @State var gradeSelected = false
+    
     let data : [GradeData] = [
         GradeData(title: "Primer", titleColor: .white, imageName: "mascot_green", color: Color("MainColor"), textColor: Color("SecondaryColor")),
         GradeData(title: "Segundo", titleColor: .black, imageName: "Menu", color: Color("SecondaryColor"), textColor: Color("MainColor")),
@@ -19,11 +21,16 @@ struct GradeView: View {
     ]
     
     var body: some View {
-        return ConcentricOnboardingView(pageContents: data.map { (GradeSectionView(page: $0), $0.color) })
-            .duration(1.0)
-            .nextIcon("chevron.right")
+        if !gradeSelected{
+            ConcentricOnboardingView(pageContents: data.map { (GradeSectionView(gradeSelected: $gradeSelected, page: $0), $0.color) })
+                .duration(1.0)
+                .nextIcon("chevron.right")
+        }
+        else {
+            ContentView(gradeSelected: $gradeSelected)
         }
     }
+}
 
 
 struct GradeView_Previews: PreviewProvider {

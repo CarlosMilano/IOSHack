@@ -12,6 +12,7 @@ struct ContentView: View {
     @StateObject var contentVM = ContentViewModel()
     @StateObject var contentVM2 = ContentViewModel()
     @StateObject var contentVM3 = ContentViewModel()
+    @Binding var gradeSelected: Bool
     
     
     var body: some View {
@@ -61,6 +62,15 @@ struct ContentView: View {
                                     .foregroundColor(Color("Yellow"))
                                     .font(.system(size: 37))
                             })
+                        }
+                        ToolbarItem(placement: .navigationBarLeading){
+                            Button(action: {
+                                gradeSelected = false
+                                })
+                            {
+                                Text("GRADOS")
+                                    .foregroundColor(Color("Yellow"))
+                            }
                         }
                     }
                     .toolbarBackground(Color("MainColor"), for: .automatic)
@@ -125,7 +135,8 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    @State static var gradeSelected = false
     static var previews: some View {
-        ContentView()
+        ContentView(gradeSelected: $gradeSelected)
     }
 }
