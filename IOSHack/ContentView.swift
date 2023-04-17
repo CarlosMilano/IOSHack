@@ -17,7 +17,7 @@ struct ContentView: View {
     @State var TeacherImageEnd : String = "_open"
     @State var timerCount: Float = 3.0
     
-    let blinkTimer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
+    let blinkTimer = Timer.publish(every: 0.2, on: .main, in: .common)
     
     
     var body: some View {
@@ -76,7 +76,7 @@ struct ContentView: View {
                         .padding(.horizontal,7)
                         .toolbar{
                             ToolbarItem(placement: .navigationBarTrailing){
-                                NavigationLink(destination: ChatView(context: ""), label: {
+                                NavigationLink(destination: ChatView(), label: {
                                     Image(systemName: "questionmark.app.fill")
                                         .foregroundColor(Color("Yellow"))
                                         .font(.system(size: 35))

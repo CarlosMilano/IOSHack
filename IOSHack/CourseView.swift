@@ -14,7 +14,7 @@ struct CourseView: View {
     let currentIndex : Int
     @State var timerCount : Float = 3.0
     @State var TeacherNameEnd : String = "_open"
-    let blinkTimer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
+    let blinkTimer = Timer.publish(every: 0.2, on: .main, in: .common)
     
     var body: some View {
         NavigationView {
@@ -31,7 +31,7 @@ struct CourseView: View {
                         HStack {}
                             .frame(maxWidth: .infinity)
                         VStack {
-                            NavigationLink(destination: ChatView(context: ""), label: {
+                            NavigationLink(destination: ChatView(), label: {
                                 Image(systemName: "questionmark.app.fill")
                                     .foregroundColor(Color("Yellow"))
                                     .font(.system(size: 35))
