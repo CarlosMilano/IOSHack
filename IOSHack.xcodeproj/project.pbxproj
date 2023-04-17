@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		165B960D29ED05E0008DC450 /* CongratulationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165B960C29ED05E0008DC450 /* CongratulationsView.swift */; };
 		167E255B29EBC00100CA44CD /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167E255A29EBC00100CA44CD /* ChatView.swift */; };
 		167E257B29EBD75900CA44CD /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 167E257A29EBD75900CA44CD /* OpenAISwift */; };
 		1682C6FA29EC39F600E6DFE9 /* StartCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1682C6F929EC39F600E6DFE9 /* StartCourseView.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		165B960C29ED05E0008DC450 /* CongratulationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsView.swift; sourceTree = "<group>"; };
 		167E255A29EBC00100CA44CD /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		1682C6F929EC39F600E6DFE9 /* StartCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCourseView.swift; sourceTree = "<group>"; };
 		7C56486929EBAA200017F246 /* IOSHack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSHack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +81,7 @@
 				7CCB8A6129EBC12F0074D6CE /* SplashView.swift */,
 				167E255A29EBC00100CA44CD /* ChatView.swift */,
 				1682C6F929EC39F600E6DFE9 /* StartCourseView.swift */,
+				165B960C29ED05E0008DC450 /* CongratulationsView.swift */,
 				7C56486C29EBAA200017F246 /* IOSHackApp.swift */,
 				7C56486E29EBAA200017F246 /* ContentView.swift */,
 				7CA3133429EC2E9D00AF55DE /* ContentViewModel.swift */,
@@ -180,6 +183,7 @@
 				1682C6FA29EC39F600E6DFE9 /* StartCourseView.swift in Sources */,
 				7CCB8A6229EBC12F0074D6CE /* SplashView.swift in Sources */,
 				7CA600A229EC07FB00FB7651 /* GradeView.swift in Sources */,
+				165B960D29ED05E0008DC450 /* CongratulationsView.swift in Sources */,
 				7CA3133529EC2E9D00AF55DE /* ContentViewModel.swift in Sources */,
 				7CD3C1D329ECEA5E0017C880 /* GradeData.swift in Sources */,
 				7C56486F29EBAA200017F246 /* ContentView.swift in Sources */,
@@ -319,7 +323,7 @@
 				DEVELOPMENT_TEAM = PS39S65WUX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Learn It";
+				INFOPLIST_KEY_CFBundleDisplayName = MyBrainBuddy;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -351,7 +355,7 @@
 				DEVELOPMENT_TEAM = PS39S65WUX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Learn It";
+				INFOPLIST_KEY_CFBundleDisplayName = MyBrainBuddy;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
