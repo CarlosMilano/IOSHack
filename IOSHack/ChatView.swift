@@ -100,7 +100,7 @@ struct ChatView: View {
             return
         }
         fullText = ""
-        renderedText = ""
+        renderedText = "..."
         timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
         viewModel.send(text: text) {
             response in DispatchQueue.main.async {
