@@ -106,6 +106,7 @@ struct ChatView: View {
         fullText = ""
         renderedText = "..."
         timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+        text = "Desde la perspectiva de una maestra de primaria, rsponde lo siguiente como si yo fuera tu estudiante favorito: "+text
         viewModel.send(text: text) {
             response in DispatchQueue.main.async {
                 fullText = response
