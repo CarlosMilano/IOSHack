@@ -12,6 +12,11 @@ struct StartCourseView: View {
     let content : ContentModel
     let contentM : ContentModel
     let contentO : ContentModel
+    
+    @State private var renderedText = ""
+    @State var isTyping = true
+    
+    let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
 
     
     var body: some View {
@@ -19,17 +24,31 @@ struct StartCourseView: View {
             Color("MainColor")
                 .edgesIgnoringSafeArea(.all)
             VStack(alignment: .center){
-                VStack{
-                    Text(contentO.descripcion)
-                        .padding()
-                        .background(Color.white)
-                        .cornerRadius(10)
-                        
-                }
-                Spacer()
-                Image("Menu")
-                    .resizable()
-                    .frame(width: 162, height: 120)
+                ScrollView(.vertical,showsIndicators: false){
+                    VStack{
+                        Text(renderedText)
+                            .font(.system(size: 20, weight: .bold ))
+                            .padding()
+                            .background(
+                                Rectangle()
+                                    .foregroundColor(Color.white)
+                                    .cornerRadius(10)
+                            )
+                            .cornerRadius(10)
+                            .onReceive(timer) { _ in
+                                if  renderedText.count < contentO.descripcion.count {
+                                    renderedText = String(contentO.descripcion.prefix(renderedText.count + 1))
+                                } else {
+                                    timer.upstream.connect().cancel()
+                                    isTyping = false
+                                }
+                            }
+                        Image( isTyping ? "EllieEyesOpen2" : "EllieEyesOpen")
+                            .resizable()
+                            .frame(width: 160, height: 116)
+                            .padding(20) 
+                    }
+                }.padding()
                 Spacer()
                 Button(action: {
                             print("¡Hola, mundo!")
