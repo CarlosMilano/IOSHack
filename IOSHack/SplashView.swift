@@ -14,7 +14,7 @@ struct SplashView: View {
     var body: some View {
         ZStack{
             if self.isAvtive{
-                ContentView()
+                GradeView()
             }
             else {
                 Color("MainColor")

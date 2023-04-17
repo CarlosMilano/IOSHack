@@ -19,6 +19,9 @@
 		7CA3133729EC2FA700AF55DE /* ContentItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3133629EC2FA700AF55DE /* ContentItemView.swift */; };
 		7CA600A229EC07FB00FB7651 /* GradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA600A129EC07FB00FB7651 /* GradeView.swift */; };
 		7CCB8A6229EBC12F0074D6CE /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCB8A6129EBC12F0074D6CE /* SplashView.swift */; };
+		7CD3C1D129ECEA250017C880 /* ConcentricOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = 7CD3C1D029ECEA250017C880 /* ConcentricOnboarding */; };
+		7CD3C1D329ECEA5E0017C880 /* GradeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3C1D229ECEA5E0017C880 /* GradeData.swift */; };
+		7CD3C1D529ECEB670017C880 /* GradeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3C1D429ECEB670017C880 /* GradeSectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,8 @@
 		7CA3133629EC2FA700AF55DE /* ContentItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentItemView.swift; sourceTree = "<group>"; };
 		7CA600A129EC07FB00FB7651 /* GradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeView.swift; sourceTree = "<group>"; };
 		7CCB8A6129EBC12F0074D6CE /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		7CD3C1D229ECEA5E0017C880 /* GradeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeData.swift; sourceTree = "<group>"; };
+		7CD3C1D429ECEB670017C880 /* GradeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeSectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +47,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				167E257B29EBD75900CA44CD /* OpenAISwift in Frameworks */,
+				7CD3C1D129ECEA250017C880 /* ConcentricOnboarding in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +73,8 @@
 		7C56486B29EBAA200017F246 /* IOSHack */ = {
 			isa = PBXGroup;
 			children = (
+				7CD3C1D429ECEB670017C880 /* GradeSectionView.swift */,
+				7CD3C1D229ECEA5E0017C880 /* GradeData.swift */,
 				7CA600A129EC07FB00FB7651 /* GradeView.swift */,
 				7CCB8A6129EBC12F0074D6CE /* SplashView.swift */,
 				167E255A29EBC00100CA44CD /* ChatView.swift */,
@@ -108,6 +116,7 @@
 			name = IOSHack;
 			packageProductDependencies = (
 				167E257A29EBD75900CA44CD /* OpenAISwift */,
+				7CD3C1D029ECEA250017C880 /* ConcentricOnboarding */,
 			);
 			productName = IOSHack;
 			productReference = 7C56486929EBAA200017F246 /* IOSHack.app */;
@@ -139,6 +148,7 @@
 			mainGroup = 7C56486029EBAA200017F246;
 			packageReferences = (
 				167E257929EBD75900CA44CD /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+				7CD3C1CF29ECEA250017C880 /* XCRemoteSwiftPackageReference "ConcentricOnboarding" */,
 			);
 			productRefGroup = 7C56486A29EBAA200017F246 /* Products */;
 			projectDirPath = "";
@@ -171,10 +181,12 @@
 				7CCB8A6229EBC12F0074D6CE /* SplashView.swift in Sources */,
 				7CA600A229EC07FB00FB7651 /* GradeView.swift in Sources */,
 				7CA3133529EC2E9D00AF55DE /* ContentViewModel.swift in Sources */,
+				7CD3C1D329ECEA5E0017C880 /* GradeData.swift in Sources */,
 				7C56486F29EBAA200017F246 /* ContentView.swift in Sources */,
 				7CA3133729EC2FA700AF55DE /* ContentItemView.swift in Sources */,
 				7C56486D29EBAA200017F246 /* IOSHackApp.swift in Sources */,
 				7CA3133329EC2D4E00AF55DE /* ContentModel.swift in Sources */,
+				7CD3C1D529ECEB670017C880 /* GradeSectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +403,14 @@
 				kind = branch;
 			};
 		};
+		7CD3C1CF29ECEA250017C880 /* XCRemoteSwiftPackageReference "ConcentricOnboarding" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/ConcentricOnboarding.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -398,6 +418,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 167E257929EBD75900CA44CD /* XCRemoteSwiftPackageReference "OpenAISwift" */;
 			productName = OpenAISwift;
+		};
+		7CD3C1D029ECEA250017C880 /* ConcentricOnboarding */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CD3C1CF29ECEA250017C880 /* XCRemoteSwiftPackageReference "ConcentricOnboarding" */;
+			productName = ConcentricOnboarding;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
