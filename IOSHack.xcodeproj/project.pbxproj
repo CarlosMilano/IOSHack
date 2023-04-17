@@ -20,6 +20,9 @@
 		7CA3133529EC2E9D00AF55DE /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3133429EC2E9D00AF55DE /* ContentViewModel.swift */; };
 		7CA3133729EC2FA700AF55DE /* ContentItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3133629EC2FA700AF55DE /* ContentItemView.swift */; };
 		7CA600A229EC07FB00FB7651 /* GradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA600A129EC07FB00FB7651 /* GradeView.swift */; };
+		7CA70C2629ED209700BB358F /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA70C2529ED209700BB358F /* CourseView.swift */; };
+		7CA70C2829ED214000BB358F /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA70C2729ED214000BB358F /* CourseData.swift */; };
+		7CA70C2A29ED21C000BB358F /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA70C2929ED21C000BB358F /* CourseModel.swift */; };
 		7CCB8A6229EBC12F0074D6CE /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCB8A6129EBC12F0074D6CE /* SplashView.swift */; };
 		7CD3C1D129ECEA250017C880 /* ConcentricOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = 7CD3C1D029ECEA250017C880 /* ConcentricOnboarding */; };
 		7CD3C1D329ECEA5E0017C880 /* GradeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3C1D229ECEA5E0017C880 /* GradeData.swift */; };
@@ -39,6 +42,9 @@
 		7CA3133429EC2E9D00AF55DE /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		7CA3133629EC2FA700AF55DE /* ContentItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentItemView.swift; sourceTree = "<group>"; };
 		7CA600A129EC07FB00FB7651 /* GradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeView.swift; sourceTree = "<group>"; };
+		7CA70C2529ED209700BB358F /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
+		7CA70C2729ED214000BB358F /* CourseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
+		7CA70C2929ED21C000BB358F /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
 		7CCB8A6129EBC12F0074D6CE /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		7CD3C1D229ECEA5E0017C880 /* GradeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeData.swift; sourceTree = "<group>"; };
 		7CD3C1D429ECEB670017C880 /* GradeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeSectionView.swift; sourceTree = "<group>"; };
@@ -86,6 +92,9 @@
 				165B960C29ED05E0008DC450 /* CongratulationsView.swift */,
 				7C56486C29EBAA200017F246 /* IOSHackApp.swift */,
 				7C56486E29EBAA200017F246 /* ContentView.swift */,
+				7CA70C2529ED209700BB358F /* CourseView.swift */,
+				7CA70C2929ED21C000BB358F /* CourseModel.swift */,
+				7CA70C2729ED214000BB358F /* CourseData.swift */,
 				7CA3133429EC2E9D00AF55DE /* ContentViewModel.swift */,
 				7CA3133629EC2FA700AF55DE /* ContentItemView.swift */,
 				7CA3133229EC2D4E00AF55DE /* ContentModel.swift */,
@@ -183,15 +192,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CA70C2829ED214000BB358F /* CourseData.swift in Sources */,
 				167E255B29EBC00100CA44CD /* ChatView.swift in Sources */,
 				1682C6FA29EC39F600E6DFE9 /* StartCourseView.swift in Sources */,
 				7CCB8A6229EBC12F0074D6CE /* SplashView.swift in Sources */,
 				7CA600A229EC07FB00FB7651 /* GradeView.swift in Sources */,
 				165B960D29ED05E0008DC450 /* CongratulationsView.swift in Sources */,
+				7CA70C2A29ED21C000BB358F /* CourseModel.swift in Sources */,
 				7CA3133529EC2E9D00AF55DE /* ContentViewModel.swift in Sources */,
 				7CD3C1D329ECEA5E0017C880 /* GradeData.swift in Sources */,
 				7C56486F29EBAA200017F246 /* ContentView.swift in Sources */,
 				7CA3133729EC2FA700AF55DE /* ContentItemView.swift in Sources */,
+				7CA70C2629ED209700BB358F /* CourseView.swift in Sources */,
 				7C56486D29EBAA200017F246 /* IOSHackApp.swift in Sources */,
 				7CA3133329EC2D4E00AF55DE /* ContentModel.swift in Sources */,
 				7CD3C1D529ECEB670017C880 /* GradeSectionView.swift in Sources */,

@@ -13,6 +13,8 @@ struct StartCourseView: View {
     let contentM : ContentModel
     let contentO : ContentModel
     
+    @Binding var courseSelected : Bool
+    
     @State private var renderedText = ""
     @State var isTyping = true
     
@@ -51,7 +53,7 @@ struct StartCourseView: View {
                 }.padding()
                 Spacer()
                 Button(action: {
-                            print("¡Hola, mundo!")
+                            courseSelected = true
                         }) {
                             Text("Empezar")
                                 .font(.system(size: 20, weight: .bold ))
@@ -69,7 +71,8 @@ struct StartCourseView: View {
 }
 
 struct StartCourseView_Previews: PreviewProvider {
+    @State static var courseSelected : Bool = false
     static var previews: some View {
-        StartCourseView(content: ContentModel.defaultContent, contentM: ContentModel.defaultContent,contentO: ContentModel.defaultContent)
+        StartCourseView(content: ContentModel.defaultContent, contentM: ContentModel.defaultContent,contentO: ContentModel.defaultContent, courseSelected: $courseSelected)
     }
 }

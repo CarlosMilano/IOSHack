@@ -9,6 +9,7 @@ import SwiftUI
 import ConfettiSwiftUI
 
 struct CongratulationsView: View {
+    @Binding var courseSelected : Bool
     @State private var counter: Int = 0
     @State var firstTextRender = true
     @State var isTyping = true
@@ -78,17 +79,17 @@ struct CongratulationsView: View {
                                 }
                     Spacer()
                     Button(action: {
-                                print("¡Hola, mundo!")
+                                courseSelected = false
                             }) {
                                 Text("Continuar")
-                                    .font(.system(size: 20, weight: .bold ))
+                                    .font(.system(size: 17, weight: .bold ))
                                     .padding(.horizontal,50)
                                     .padding(.vertical)
                                     .foregroundColor(.black)
                                     .background(Color("Yellow"))
                                     .cornerRadius(10)
                             }
-                        .frame(width: 200, height: 50)
+                        .frame(width: 190, height: 50)
                 }
                 .padding()
             }
@@ -96,7 +97,8 @@ struct CongratulationsView: View {
 }
 
 struct CongratulationsView_Previews: PreviewProvider {
+    @State static var courseSelected = true
     static var previews: some View {
-        CongratulationsView()
+        CongratulationsView(courseSelected: $courseSelected)
     }
 }
