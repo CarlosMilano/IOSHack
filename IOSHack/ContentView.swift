@@ -13,26 +13,47 @@ struct ContentView: View {
     @StateObject var contentVM2 = ContentViewModel()
     @StateObject var contentVM3 = ContentViewModel()
     
+    
     var body: some View {
-        NavigationStack{
+        NavigationView{
             ZStack{
                 Color("MainColor")
                     .edgesIgnoringSafeArea(.all)
                 ScrollView(.vertical, showsIndicators: false){
-                        Image("Menu")
-                            .resizable()
-                            .frame(width: 162, height: 120)
-                            .padding(20)
+                    Image("Menu")
+                        .resizable()
+                        .frame(width: 162, height: 120)
+                        .padding(20)
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack() {
-                            ForEach(0..<6) {_ in
-                                Rectangle()
-                                    .frame(width: 150, height: 40)
-                                    .cornerRadius(5)
-                                    .padding(.horizontal, 5)
-                            }
+                            Text("Ciencas Naturales")
+                                .padding()
+                                .font(.system(size: 20, weight: .bold ))
+                                .background(
+                                    Rectangle()
+                                        .foregroundColor(Color.white)
+                                        .cornerRadius(7)
+                                )
+                            Text("Matemáticas")
+                                .padding()
+                                .font(.system(size: 20, weight: .bold ))
+                                .background(
+                                    Rectangle()
+                                        .foregroundColor(Color.white)
+                                        .cornerRadius(7)
+                                )
+                            Text("Desarrollo Sostenible")
+                                .padding()
+                                .font(.system(size: 20, weight: .bold ))
+                                .background(
+                                    Rectangle()
+                                        .foregroundColor(Color.white)
+                                        .cornerRadius(7)
+                                )
                         }
+                        .padding(.horizontal,5)
                     }
+                    
                     .toolbar{
                         ToolbarItem(placement: .navigationBarTrailing){
                             NavigationLink(destination: ChatView(), label: {
@@ -43,59 +64,59 @@ struct ContentView: View {
                         }
                     }
                     .toolbarBackground(Color("MainColor"), for: .automatic)
-
+                    
                     VStack{
-                    VStack(alignment: .leading){
-                                Text("Ciencias Naturales")
-                            .foregroundColor(Color.white)
-                                    .font(.largeTitle)
-                                    .bold()
-                                    .padding(.horizontal, 10)
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack() {
-                                ForEach(contentVM.arrContent)
-                                { item in
-                                    NavigationLink(destination: StartCourseView(content: item, contentM: item,contentO: item),
-                                                   label: { ContentItemView(content: item, contentM: item,contentO: item)})
-                                    
+                        VStack(alignment: .leading){
+                            Text("Ciencias Naturales")
+                                .foregroundColor(Color.white)
+                                .font(.largeTitle)
+                                .bold()
+                                .padding(.horizontal, 10)
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack() {
+                                    ForEach(contentVM.arrContent)
+                                    { item in
+                                        NavigationLink(destination: StartCourseView(content: item, contentM: item,contentO: item),
+                                                       label: { ContentItemView(content: item, contentM: item,contentO: item)})
+                                        
+                                    }
                                 }
                             }
                         }
-                            }
                         VStack(alignment: .leading){
-                                    Text("Desarrollo Sostenible")
+                            Text("Desarrollo Sostenible")
                                 .foregroundColor(Color.white)
-                                        .font(.largeTitle)
-                                        .bold()
-                                        .padding(.horizontal, 10)
+                                .font(.largeTitle)
+                                .bold()
+                                .padding(.horizontal, 10)
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack() {
                                     ForEach(contentVM3.arrContentO)
                                     { item in
                                         NavigationLink(destination: StartCourseView(content: item, contentM: item,contentO: item),
                                                        label: { ContentItemView(content: item, contentM: item,contentO: item)})
-                                       
+                                        
                                     }
                                 }
                             }
-                                }
+                        }
                         VStack(alignment: .leading){
-                                    Text("Matemáticas")
+                            Text("Matemáticas")
                                 .foregroundColor(Color.white)
-                                        .font(.largeTitle)
-                                        .bold()
-                                        .padding(.horizontal, 10)
+                                .font(.largeTitle)
+                                .bold()
+                                .padding(.horizontal, 10)
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack() {
                                     ForEach(contentVM2.arrContentM)
                                     { item in
                                         NavigationLink(destination: StartCourseView(content: item, contentM: item,contentO: item),
                                                        label: { ContentItemView(content: item, contentM: item,contentO: item)})
-                                       
+                                        
                                     }
                                 }
                             }
-                                }
+                        }
                     }
                 }
             }

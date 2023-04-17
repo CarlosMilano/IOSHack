@@ -20,14 +20,10 @@ struct StartCourseView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack(alignment: .center){
                 VStack{
-                    Text("Este es el texto de dialogo del Elefante")
+                    Text(contentO.descripcion)
                         .padding()
                         .background(Color.white)
                         .cornerRadius(10)
-                    Image(content.nombreImagen)
-                        .resizable()
-                        .cornerRadius(5)
-                        .frame(width: 170, height: 190)
                         
                 }
                 Spacer()
