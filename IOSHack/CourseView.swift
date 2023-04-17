@@ -12,67 +12,91 @@ struct CourseView: View {
     let page : CourseData
     let lastIndex : Int
     let currentIndex : Int
+    @State var timerCount : Float = 3.0
+    @State var TeacherNameEnd : String = "_open"
+    let blinkTimer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        VStack(alignment: .leading) {
-            VStack {
-                Text(page.title)
-                    .fontWeight(.bold)
-                    .font(.system(size: 24))
-                VStack(alignment: .leading) {
-                    Text(page.text)
-                }
-                .padding(.top, 5)
-                HStack {
-                    HStack {}
-                        .frame(maxWidth: .infinity)
-                    Image("Menu")
-                        .resizable()
-                        .frame(width: 228 / 2, height: 165 / 2)
-                }
-            }
-            .frame(maxHeight: .infinity)
-            VStack {
-                Button(action: {
-                    currentView += 1
-                }) {
-                    Text("Siguiente")
-                        .padding(.vertical, 14)
-                        .padding(.horizontal, 48)
-                        .background(Color("MainColor"))
-                        .foregroundColor(.white)
-                        .fontWeight(.medium)
-                        .font(.system(size: 20))
-                        .cornerRadius(8)
-                        .padding(.bottom, 25)
-                }
-                HStack {
-                    LazyHStack {
-                        ForEach(-1..<currentIndex, id: \.self) { i in
-                            Circle()
-                                .fill(Color("MainColor"))
-                                .frame(width: 25)
+        NavigationView {
+            VStack(alignment: .leading) {
+                VStack {
+                    Text(page.title)
+                        .fontWeight(.bold)
+                        .font(.system(size: 24))
+                    VStack(alignment: .leading) {
+                        Text(page.text)
+                    }
+                    .padding(.top, 5)
+                    HStack {
+                        HStack {}
+                            .frame(maxWidth: .infinity)
+                        VStack {
+                            NavigationLink(destination: ChatView(context: ""), label: {
+                                Image(systemName: "questionmark.app.fill")
+                                    .foregroundColor(Color("Yellow"))
+                                    .font(.system(size: 35))
+                            })
+                            VStack {}
+                                .frame(maxHeight: .infinity)
+                        }
+                        Image("Menu" + TeacherNameEnd)
+                            .resizable()
+                            .frame(width: 228 / 2, height: 165 / 2)
+                            .onReceive(blinkTimer) { _ in
+                                timerCount += 0.2
+                                TeacherNameEnd = "_open"
+                                if timerCount > 5.0 {
+                                    TeacherNameEnd = ""
+                                    timerCount = 0
+                                }
                             }
                     }
-                    .frame(height: 25)
-                    LazyHStack {
-                        ForEach(currentIndex..<lastIndex, id: \.self) { i in
-                            Circle()
-                                .fill(.black)
-                                .frame(width: 25)
-                                .overlay(
-                                    Circle()
-                                        .fill(.white)
-                                        .frame(width: 18)
-                                )
-                        }
-                    }
-                    .frame(height: 25)
+                    .frame(maxHeight: 165 / 2)
+                    .padding(.top, 50)
                 }
+                .frame(maxHeight: .infinity)
+                VStack {
+                    Button(action: {
+                        currentView += 1
+                    }) {
+                        Text("Siguiente")
+                            .padding(.vertical, 14)
+                            .padding(.horizontal, 48)
+                            .background(Color("MainColor"))
+                            .foregroundColor(.white)
+                            .fontWeight(.medium)
+                            .font(.system(size: 20))
+                            .cornerRadius(8)
+                            .padding(.bottom, 25)
+                    }
+                    HStack {
+                        LazyHStack {
+                            ForEach(-1..<currentIndex, id: \.self) { i in
+                                Circle()
+                                    .fill(Color("MainColor"))
+                                    .frame(width: 25)
+                                }
+                        }
+                        .frame(height: 25)
+                        LazyHStack {
+                            ForEach(currentIndex..<lastIndex, id: \.self) { i in
+                                Circle()
+                                    .fill(.black)
+                                    .frame(width: 25)
+                                    .overlay(
+                                        Circle()
+                                            .fill(.white)
+                                            .frame(width: 18)
+                                    )
+                            }
+                        }
+                        .frame(height: 25)
+                    }
+                }
+                .frame(maxWidth: .infinity)
             }
-            .frame(maxWidth: .infinity)
+            .padding(25)
         }
-        .padding(25)
     }
 }
 

@@ -14,6 +14,10 @@ struct ContentView: View {
     @StateObject var contentVM3 = ContentViewModel()
     @State var courseSelected = false
     @Binding var gradeSelected: Bool
+    @State var TeacherImageEnd : String = "_open"
+    @State var timerCount: Float = 3.0
+    
+    let blinkTimer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
     
     
     var body: some View {
@@ -23,10 +27,18 @@ struct ContentView: View {
                     Color("MainColor")
                         .edgesIgnoringSafeArea(.all)
                     ScrollView(.vertical, showsIndicators: false){
-                        Image("Menu")
+                        Image("Menu" + TeacherImageEnd)
                             .resizable()
                             .frame(width: 162, height: 120)
                             .padding(.vertical,5)
+                            .onReceive(blinkTimer) { _ in
+                                timerCount += 0.2
+                                TeacherImageEnd = "_open"
+                                if timerCount > 5.0 {
+                                    TeacherImageEnd = ""
+                                    timerCount = 0.0
+                                }
+                            }
                         Text("300")
                             .padding(.horizontal,10)
                             .font(.system(size: 20, weight: .bold ))
@@ -64,7 +76,7 @@ struct ContentView: View {
                         .padding(.horizontal,7)
                         .toolbar{
                             ToolbarItem(placement: .navigationBarTrailing){
-                                NavigationLink(destination: ChatView(), label: {
+                                NavigationLink(destination: ChatView(context: ""), label: {
                                     Image(systemName: "questionmark.app.fill")
                                         .foregroundColor(Color("Yellow"))
                                         .font(.system(size: 35))
@@ -75,7 +87,8 @@ struct ContentView: View {
                                     gradeSelected = false
                                     })
                                 {
-                                    Text("GRADOS")
+                                    Text("2")
+                                        .font(.system(size: 20, weight: .bold))
                                         .padding(5)
                                         .background(Color("Yellow"))
                                         .cornerRadius(5)

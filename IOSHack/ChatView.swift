@@ -32,6 +32,8 @@ final class ViewModel: ObservableObject{
 
 struct ChatView: View {
     
+    let context : String
+    
     @ObservedObject var viewModel = ViewModel()
     @State var isTyping = true
     @State var text = ""
@@ -106,8 +108,7 @@ struct ChatView: View {
         fullText = ""
         renderedText = "..."
         timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
-        text = "Desde la perspectiva de una maestra de primaria, rsponde lo siguiente como si yo fuera tu estudiante favorito: "+text
-        viewModel.send(text: text) {
+        viewModel.send(text: "Desde la perspectiva de una maestra de primaria, responde lo siguiente como si yo fuera tu estudiante favorito. Además, como contexto: " + context + ". La pregunta es: " + text) {
             response in DispatchQueue.main.async {
                 fullText = response
                 fullText = fullText.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -120,7 +121,8 @@ struct ChatView: View {
 }
 
 struct ChatView_Previews: PreviewProvider {
+    @State static var context = ""
     static var previews: some View {
-        ChatView()
+        ChatView(context: context)
     }
 }
