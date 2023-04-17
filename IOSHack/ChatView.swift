@@ -33,11 +33,12 @@ final class ViewModel: ObservableObject{
 struct ChatView: View {
     
     @ObservedObject var viewModel = ViewModel()
-    @State var isTyping = false
+    @State var isTyping = true
     @State var text = ""
     @State private var renderedText = ""
-    @State private var fullText = ""
+    @State private var fullText = "¡Hola! ¿Que dudas tienes?"
     @State var timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+     
     
     
     var body: some View {
