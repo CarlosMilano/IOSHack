@@ -36,7 +36,7 @@ struct ChatView: View {
     @State var isTyping = true
     @State var text = ""
     @State private var renderedText = ""
-    @State private var fullText = "¡Hola! ¿Que dudas tienes?"
+    @State private var fullText = "¡Hola, soy la maestra Ellie! ¿En que te puedo ayudar?"
     @State var timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
      
     
@@ -67,6 +67,10 @@ struct ChatView: View {
                                     }
                                 }
                 }
+                Image( isTyping ? "EllieEyesOpen2" : "EllieEyesOpen")
+                    .resizable()
+                    .frame(width: 160, height: 116)
+                    .padding(20) 
             }
             
             Spacer()
